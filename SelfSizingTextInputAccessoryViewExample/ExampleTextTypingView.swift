@@ -9,21 +9,7 @@
 import Foundation
 import UIKit
 
-///
-/// Originally intended to be used as an text view in
-/// an input accessory view.
-///
-/// - Note:
-///     This view is designed to be used with Auto-Layout system.
-///
-/// - Note:
-///     This object itself becomes the delegate of the text-view.
-///     To handle text-view delegate, subclass this class and
-///     override delegate methods. As delegate methods are OBJC legacy,
-///     and gets resolved dynamically, therefore you add them in subclass
-///     they gonna be used.
-///
-open class ExampleTextTypingView: UIInputView, UITextViewDelegate {
+class ExampleTextTypingView: UIInputView, UITextViewDelegate {
     var maximumHeight: CGFloat = 100 {
         didSet {
             adjustLayout()
@@ -83,15 +69,15 @@ open class ExampleTextTypingView: UIInputView, UITextViewDelegate {
 
     ////
 
-    public override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
+    override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
         super.init(frame: frame, inputViewStyle: inputViewStyle)
         install()
     }
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         install()
     }
-    open override var translatesAutoresizingMaskIntoConstraints: Bool {
+    override var translatesAutoresizingMaskIntoConstraints: Bool {
         willSet {
             precondition(newValue == false, "This view can be used only with Auto Layout system. Otherwise, this won't work properly.")
         }
@@ -99,10 +85,10 @@ open class ExampleTextTypingView: UIInputView, UITextViewDelegate {
 
     ////
 
-    open func textViewDidChange(_ textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         adjustLayout()
     }
-    open func textViewDidChangeSelection(_ textView: UITextView) {
+    func textViewDidChangeSelection(_ textView: UITextView) {
         adjustLayout()
     }
 }
