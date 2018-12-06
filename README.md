@@ -9,5 +9,5 @@ Here I provide simple example which describes how to build such configuration.
 This example project is provided as an illustration rather than a library. You are supposed to
 read core source code and copy and paste them into your project where appropriate.
 
-See `ExampleTextTypingView` for core code.
+See [`ExampleTextTypingView`](SelfSizingTextInputAccessoryViewExample/ExampleTextTypingView.swift) for core code.
 You also execute this project from Simulator directly.
