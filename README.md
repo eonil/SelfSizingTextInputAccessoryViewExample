@@ -2,6 +2,8 @@
 
 Eonil, 2018 /12/06
 
+[![Youtube Video of this Example](http://img.youtube.com/vi/StpwXhwFzhg/0.jpg)](http://www.youtube.com/watch?v=StpwXhwFzhg "Illustration")
+
 Self-sizing text-view on input accessory view can be composited simply but it's hard to figure
 out correct configurations. And such compositions extermely hard to encapsulate into a library.
 
